@@ -1,6 +1,6 @@
 # E-commerce project - React App
 
-- [DEMO link](https://)
+- [DEMO link](https://e-commerce-project.vercel.app/)
 
 ### Technologies used in project:
 
