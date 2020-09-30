@@ -1,0 +1,73 @@
+$sub-color: grey;
+$main-color: black;
+$white-color: white;
+$active-color: ghostwhite;
+$success-color: green;
+
+@mixin shrinkLabel {
+  top: -25px;
+  font-size: 13px;
+  color: $main-color;
+}
+
+.contact-us {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+
+  .text-success {
+    font-weight: bold;
+    color: $success-color;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .title {
+    margin: 10px 0;
+  }
+
+  .group {
+    position: relative;
+    margin: 45px 0;
+
+    .form-input {
+      background: $white-color none;
+      color: $main-color;
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid $sub-color;
+      margin: 25px 0;
+
+      &:focus {
+        outline: none;
+        background-color: $active-color;
+      }
+
+      &:focus ~ .form-input-label {
+        @include shrinkLabel();
+      }
+    }
+
+    .form-input-label {
+      color: $sub-color;
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: -20px;
+      transition: 300ms ease all;
+
+      &.shrink {
+        @include shrinkLabel();
+      }
+    }
+  }
+}
+
+
+
